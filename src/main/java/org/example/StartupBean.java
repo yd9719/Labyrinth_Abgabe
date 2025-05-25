@@ -13,8 +13,12 @@ public class StartupBean {
         DefaultApi defaultApi = new DefaultApi();
 
         GameInputDto gameInput = new GameInputDto();
-        gameInput.setGroupName("TestTestLOL");
+        gameInput.setGroupName("YannicDavid");
 
         GameDto response = defaultApi.gamePost(gameInput);
+        System.out.println("Spiel wurde erfolgreich gestartet. GameID lautet: " + response.getGameId());
+
+        Session.setGameId(response.getGameId());
+
     }
 }
